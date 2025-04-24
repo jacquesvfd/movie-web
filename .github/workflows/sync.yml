@@ -1,19 +1,16 @@
 name: Sync fork
-  
+
 permissions:
   contents: write
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
   workflow_dispatch:
-  
-if: false
+
 jobs:
   sync:
+    if: false
     name: Sync fork
     runs-on: ubuntu-latest
-    if: ${{ github.event.repository.fork }}
 
     steps:
       - name: Checkout code
